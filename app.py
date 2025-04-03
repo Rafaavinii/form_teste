@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+from flask import send_file
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///dados.db"
@@ -40,6 +41,12 @@ def index():
         db.session.commit()
 
     return render_template("index.html")
+
+
+@app.route("/download-db")
+def download_db():
+    return send_file("./instance/dados.db", as_attachment=True)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
